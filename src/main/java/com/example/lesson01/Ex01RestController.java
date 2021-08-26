@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/lesson01/ex01")
-@RestController // @Controller + ResponseBody
+@RestController // @Controller + ResponseBody => 
 public class Ex01RestController {
 	
 	// 요청 URL : http://localhost/lesson01/ex01/3
 	@RequestMapping("/3")
 	// 스프링은 어노테이션을 잘 사용하면 됨..!
-	public String printString() {
+	public String printString() /* 나중에 파라미터를 여기에서 가져올 수도 있음 */ { 
 		return "@RestController를 사용해서 String을 리턴해본다.";
 	}
 	
@@ -47,5 +47,7 @@ public class Ex01RestController {
 		data.setName("신바다");
 		return new ResponseEntity<>(data, HttpStatus.OK); // 생성자(리턴하려는 객체, HttpStatus) => 200 ok
 //		return new ResponseEntity<>(data, HttpStatus.INTERNAL_SERVER_ERROR); // 500 error
+		
+		// jsp-> view화면
 	}
 }

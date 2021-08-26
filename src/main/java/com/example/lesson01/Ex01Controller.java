@@ -14,7 +14,7 @@ public class Ex01Controller {
 	// String 출력하기
 	// 요청 URL : http://localhost/lesson01/ex01/1
 	@RequestMapping("/1") // 항상 슬래시부터 시작한다..!(예외x)   // 주소 매핑
-	@ResponseBody // 메소드가 리턴하는 값(type)을 여기에 담아서 보내겠다. (메소드당 한개씩 있어야함) 
+	@ResponseBody // 메소드가 리턴하는 값(type)을 여기에 담아서 보내겠다. (메소드당 한개씩 있어야함) html로
 	// 리턴되는 값을 HTML Response Body로 보낸다.
 	public String PringtString() {
 		String text = "예제 1번 <br> 문자열을 response body로 보내는 예제";

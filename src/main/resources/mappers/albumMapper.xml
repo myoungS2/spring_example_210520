@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- dtd: xml문법 오류 감지 -->
+ 
+<mapper namespace="com.example.lesson02.dao.AlbumDAO"> <!-- ctrl눌러서 연결되었는지 꼭 확인하기 -->
+	<select id="selectAlbumList" resultType="com.example.lesson02.model.Album"> 
+		<!-- id = albumdao의 메소드명 -->
+		<!-- resultType(결과물의 한 행) = Album class의 위치 -->
+		SELECT
+			*
+		FROM
+			`album`
+	</select>
+</mapper>
