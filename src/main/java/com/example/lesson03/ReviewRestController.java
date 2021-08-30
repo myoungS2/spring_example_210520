@@ -39,7 +39,7 @@ public class ReviewRestController {
 	// INSERT
 	// 요청 URL : http://localhost/lesson03/ex02
 	@RequestMapping("/lesson03/ex02")
-	public String ex02() /* view가 아닌, 내가 리던하는 스트링 그 자체가 response body에 담기게 됨*/ {
+	public String ex02() /* view가 아닌, 내가 리턴하는 스트링 그 자체가 response body에 담기게 됨*/ {
 		Review review = new Review();
 		review.setStoreId(7);
 		review.setMenu("삼겹혼밥세트");
@@ -48,6 +48,13 @@ public class ReviewRestController {
 		review.setReview("혼자 먹기 적당하네요.");
 		
 		int rowCount = reviewBO.addReview(review); // BO insert, insert 성공한 개수 -> rowCount변수에 담기
+		return "성공한 행의 개수는 : " + rowCount ;
+	}
+	
+	// 요청 URL : http://localhost/lesson03/ex02/2
+	@RequestMapping("/lesson03/ex02/2")
+	public String ex02_2() {
+		int rowCount = reviewBO.addReviewAsField(3, "치즈와퍼", "신바다", 5.0, "치즈 와퍼 좋아요!"); // as: 내가 무엇으로 어떻게 하겠다..!라는 뉘앙스 (내가 넘기고자 하는 것을 파라미터로 넣기)
 		return "성공한 행의 개수는 : " + rowCount ;
 	}
 }

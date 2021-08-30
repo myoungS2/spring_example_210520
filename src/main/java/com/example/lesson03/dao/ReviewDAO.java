@@ -12,6 +12,16 @@ public interface ReviewDAO {
 	//	public Review selectReviewById(int id); // 가져올 행의 필드를 파라미터로 넣어준다. / Integer : null값 허용, int : 필수값
 	public Review selectReviewById(@Param("id") int id); // 2개 이상..!
 
-	// INSERT
+	// INSERT 1
 	public int insertReview (Review review); // 파라미터가 하나일 때는 @Param 없어도 무관!
+	
+	// INSERT 2 -> map으로 구성
+	public int insertReviewAsField (
+			@Param("storeId") int storeId, 
+			@Param("menu") String menu, 
+			@Param("userName") String userName,
+			@Param("point") double point, 
+			@Param("review") String review
+									);
+	
 }

@@ -19,8 +19,17 @@ public class ReviewBO {
 		return reviewDAO.selectReviewById(id);
 	}
 	
-	// INSERT -> void대신 int를 넘기면, 몇행을 insert 성공했는지 return
+	// INSERT 1 -> void대신 int를 넘기면, 몇행을 insert 성공했는지 return
 	public int addReview (Review review) {
 		return reviewDAO.insertReview(review); 
+	}
+	
+	// INSERT 2
+	public int addReviewAsField (
+			int storeId, String menu, String userName,
+			double point, String review) {
+		// 3, "치즈와퍼", "신바다", 5.0, "치즈 와퍼 좋아요!"
+		return reviewDAO.insertReviewAsField ( storeId, menu, userName, point, review); 
+
 	}
 }

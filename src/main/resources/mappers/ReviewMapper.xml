@@ -7,7 +7,7 @@
  		<!-- 2개 이상을 가져올 때는 parameterType="map" -->
  			SELECT
  				`id`
-				,`storeName`
+				<!-- ,`storeName` -->
 				,`menu`
 				,`userName`
 				,`point`
@@ -41,5 +41,28 @@
 				, NOW() <!-- getter,setter가 있기에 이렇게 불러오는 것이 가능! -->
  			)
  			
+ 		</insert>
+ 		
+ 		<insert id="insertReviewAsField" parameterType="map">
+ 			INSERT INTO `new_review`
+ 			(
+ 				`storeId`
+				,`menu`
+				,`userName`
+				,`point`
+				,`review`
+				,`createdAt`
+				,`updatedAt`
+ 			)
+ 			VALUES
+ 			(
+ 				#{storeId}
+				, #{menu}
+				, #{userName}
+				, #{point}
+				, #{review}
+				, NOW()
+				, NOW()
+ 			)	
  		</insert>
  </mapper>
