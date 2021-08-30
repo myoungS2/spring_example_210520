@@ -15,8 +15,31 @@
 				,`createdAt`
 				,`updatedAt`
  			FROM
- 				`Review`
+ 				`new_review`
  			WHERE
  				`id` = #{id}  <!-- dao에 넘어온 파라미터 값을 담은 변수명 myBatis문법 (#:동적(따옴표를 감싸게 됨)/ $:) -->	
  		</select>
+ 		<insert id="insertReview" parameterType="com.example.lesson03.model.Review"> <!-- insert의 경우 returnType 선언x -->
+ 			INSERT INTO `new_review`
+ 			(
+ 				`storeId`
+				,`menu`
+				,`userName`
+				,`point`
+				,`review`
+				,`createdAt`
+				,`updatedAt`
+ 			)
+ 			VALUES
+ 			(
+ 				#{storeId}
+				, #{menu}
+				, #{userName}
+				, #{point}
+				, #{review}
+				, NOW()
+				, NOW() <!-- getter,setter가 있기에 이렇게 불러오는 것이 가능! -->
+ 			)
+ 			
+ 		</insert>
  </mapper>

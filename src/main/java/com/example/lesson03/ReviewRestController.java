@@ -1,6 +1,7 @@
 package com.example.lesson03;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ public class ReviewRestController {
 	@Autowired
 	private ReviewBO reviewBO;
 	
+	// SELECT
 	// 요청 URL : http://localhost/lesson03/ex01?id=2 만약 id가 없다면 400대 error발생!(서버쪽으로 들어가지지도 않음)
 	@RequestMapping("/lesson03/ex01")
 	// 하나의 행만 가져오기
@@ -33,4 +35,19 @@ public class ReviewRestController {
 	}
 	
 	// Invalid 어쩌구 에러 => 다오가 맵핑x
+	
+	// INSERT
+	// 요청 URL : http://localhost/lesson03/ex02
+	@RequestMapping("/lesson03/ex02")
+	public String ex02() /* view가 아닌, 내가 리던하는 스트링 그 자체가 response body에 담기게 됨*/ {
+		Review review = new Review();
+		review.setStoreId(7);
+		review.setMenu("삼겹혼밥세트");
+		review.setUserName("신보람");
+		review.setPoint(4.5);
+		review.setReview("혼자 먹기 적당하네요.");
+		
+		int rowCount = reviewBO.addReview(review); // BO insert, insert 성공한 개수 -> rowCount변수에 담기
+		return "성공한 행의 개수는 : " + rowCount ;
+	}
 }
