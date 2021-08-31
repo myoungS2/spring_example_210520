@@ -30,6 +30,15 @@ public class ReviewBO {
 			double point, String review) {
 		// 3, "치즈와퍼", "신바다", 5.0, "치즈 와퍼 좋아요!"
 		return reviewDAO.insertReviewAsField ( storeId, menu, userName, point, review); 
-
+	}
+	
+	// UPDATE
+	public int updateReview(int id, String review) {
+		return reviewDAO.updateReview(id, review);
+	}
+	
+	// DELETE
+	public int deleteReviewById(int id) {
+		return reviewDAO.deleteReviewById(id);
 	}
 }

@@ -24,4 +24,11 @@ public interface ReviewDAO {
 			@Param("review") String review
 									);
 	
+	// UPDATE
+	public int updateReview(
+			@Param("id") int id, 
+			@Param("review") String review);
+	
+	// DELETE
+	public int deleteReviewById(int id);
 }

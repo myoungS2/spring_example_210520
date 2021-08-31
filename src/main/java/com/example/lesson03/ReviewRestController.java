@@ -57,4 +57,25 @@ public class ReviewRestController {
 		int rowCount = reviewBO.addReviewAsField(3, "치즈와퍼", "신바다", 5.0, "치즈 와퍼 좋아요!"); // as: 내가 무엇으로 어떻게 하겠다..!라는 뉘앙스 (내가 넘기고자 하는 것을 파라미터로 넣기)
 		return "성공한 행의 개수는 : " + rowCount ;
 	}
+	
+	// UPDATE
+	// 요청 URL : http://localhost/lesson03/ex03?id=19&review=고기가 덜익었지만 맛있어요
+	@RequestMapping("/lesson03/ex03")
+	public String ex03(
+			@RequestParam(value="id",  required=true) int id,
+			@RequestParam("review") String review) {
+		
+		int rowCount = reviewBO.updateReview(id, review);
+		return "변경 완료: " + rowCount;
+	}
+	
+	// DELETE
+	// 요청 URL : http://localhost/lesson03/ex04?id=23
+	@RequestMapping("/lesson03/ex04")
+	public String ex04(
+			@RequestParam(value="id") int id) {
+		
+		int rowCount = reviewBO.deleteReviewById(id);
+		return "삭제 완료: " + rowCount;
+	}
 }
