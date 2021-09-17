@@ -22,4 +22,9 @@ public class NewUserBO {
 	public NewUser getLastNewUser() {
 		return newUserDAO.selectLastNewUser();
 	}
+	
+	// lesson06 ex02
+	public boolean existNewUserByName(String name) {
+		return newUserDAO.existNewUserByName(name);
+	}
 }
