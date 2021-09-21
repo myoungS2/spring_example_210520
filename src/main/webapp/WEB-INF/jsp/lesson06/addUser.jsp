@@ -7,13 +7,12 @@
 <title>회원 정보 추가</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!--  Ajax를 쓰려면 jquery slim버전이 아닌 더 많은 함수가 있는 jquery js사용 -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-
-	<div class="container">
+ 	<div class="container">
 		<h1>회원 정보 추가</h1>
 		<form id="form" method="post" action="/lesson06/ex01/add_user">
 			<b>이름:</b>
@@ -29,9 +28,9 @@
 	</div>
 	
 	<script>
-		$(document).ready(function() {
+		$(document).ready(function() { 
 			// (1) jquery의 submit 기능 이용하기
-			// from 태그 통째로 가져오기(submit이 일어났을 때)
+			// from 태그 통째로 가져오기(submit이 일어났을 때)   
 				/*  $('#form').on('submit', function(e) {
 					// e.preventDefault(); // validation->submit이 바로 되버림, 따라서 기본적으로 submit이 되는 것을 막아주어야 함.
 				
@@ -43,15 +42,15 @@
 						alert("이름을 입력하세요.");
 						return false;
 					}
-				let yyyymmdd = $('input[name=yyyymmdd]').val().trim();
-				if (yyyymmdd == ''){
-					alert("생년월일 입력하세요.");
-					return false;
-				}
+					let yyyymmdd = $('input[name=yyyymmdd]').val().trim();
+					if (yyyymmdd == ''){
+						alert("생년월일 입력하세요.");
+						return false;
+					}
 			
 				
-				$(this).submit(); // Maximum call stack size exceeded -> 계속 이벤트를 부르는데 e.preventDefault(); 때문에 못하고 또 부르고를 반복(무한루프)
-			}); */
+					$(this).submit(); // Maximum call stack size exceeded -> 계속 이벤트를 부르는데 e.preventDefault(); 때문에 못하고 또 부르고를 반복(무한루프)
+				}); */
 			
 			// (2) jquery의 AJAX 통신을 이용하기
 			$('#addBtn').on('click', function(e) {

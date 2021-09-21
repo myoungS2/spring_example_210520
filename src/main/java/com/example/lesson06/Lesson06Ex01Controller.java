@@ -24,8 +24,9 @@ public class Lesson06Ex01Controller {
 		return "lesson06/addUser"; // input jsp
 	}
 	
-	@ResponseBody // ajax
+	// addUser에서 입력받은 값을 넘겨받는..!
 	@PostMapping("/add_user")
+	@ResponseBody // ajax 사용시에는 꼭..!
 	public String addUser(
 			@RequestParam("name") String name,
 			@RequestParam("yyyymmdd") String yyyymmdd,
@@ -35,7 +36,8 @@ public class Lesson06Ex01Controller {
 		// insert DB
 		newUserBO.addNewUser(name, yyyymmdd, email, introduce);
 		
-		// return "lesson06/afterAddUser" ;// input 성공 후 보여질 jsp
+		// return "lesson06/afterAddUser" ;// insert 성공 후 보여질 jsp
+		
 		return "success"; // ajax -> 결과 String
 	}
 	
