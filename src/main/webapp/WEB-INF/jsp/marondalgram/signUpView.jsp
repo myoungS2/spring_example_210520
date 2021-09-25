@@ -15,25 +15,28 @@
 </head>
 <body>
 	<div id="wrap" class="container">
-		<header class="text-center">
-			<div>
+		<%-- 로고 --%>
+		<header class="d-flex justify-content-center">
+			<div class="col-7 ml-4 text-center">
 				<a id="logo" href="#">Marondalgram</a>
 			</div>
 		</header>
+		
 		<%-- 아이디, 비밀번호 --%>
-		<section class="signup">
-			<div class="form-group"> <%-- 너네 가운데 정렬 왜 안돼?ㅜㅜ --%>
-				<div class="d-flex">
-					<input type="text" class="form-control col-5">
-					<a id="idcheckHref" href="#" class="ml-3">duplicate check</a>
+		<section class="signup d-flex justify-content-center">
+			<div class="form-group">
+				<div class="w-100">
+					<div class="d-flex">
+						<input type="text" class="form-control mt-3">
+						<a id="idcheckHref" href="#" class="mt-3 ml-3">IDcheck</a>
+					</div>
+					<div id="idStatusArea"></div><br>
+					<input type="password" class="form-control mt-3">
 				</div>
-				<div id="idStatusArea"></div><br>
-				<input type="password" class="form-control col-5">
-			</div>
-			<div class="text-center">	
-				<button type="button" id="signupBtn" class="btn btn-secondary col-5">sign up</button>
-			</div>	
-			<div  class="text-center">
+			
+				<div class="d-flex justify-content-center mt-3">	
+					<button type="button" id="signupBtn" class="btn btn-secondary col-5">sign up</button>
+				</div>	
 			</div>	
 		</section>
 	</div>

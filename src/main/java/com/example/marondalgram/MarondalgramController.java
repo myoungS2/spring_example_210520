@@ -14,7 +14,7 @@ public class MarondalgramController {
 	}
 	
 	// 2. 회원가입 화면
-	// 요청 url : localhost:8080/user/sign_in_view
+	// 요청 url : localhost:8080/user/sign_up_view
 	@RequestMapping("/user/sign_up_view")
 	public String sign_up_view() {
 		return "marondalgram/signUpView";

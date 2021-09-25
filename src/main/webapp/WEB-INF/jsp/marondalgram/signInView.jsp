@@ -15,24 +15,32 @@
 </head>
 <body>
 	<div id="wrap" class="container">
-		<header class="text-center">
-			<div>
+		<%-- 로고 --%>
+		<header class="d-flex justify-content-center">
+			<div class="col-7 ml-4 text-center">
 				<a id="logo" href="#">Marondalgram</a>
 			</div>
 		</header>
-		<%-- 아이디, 비밀번호 --%>
-		<section class="signin">
-			<div class="form-group"> <%-- 너네 가운데 정렬 왜 안돼?ㅜㅜ --%>
-				<input type="text" class="form-control col-5">
-				<input type="password" class="form-control col-5">
+		
+		<%-- 아이디/비밀번호 --%>
+		<section class="signin d-flex justify-content-center">
+			<div class="form-group">
+					<div class="w-100">
+						<input type="text" id="loginIdInput" class="form-control mt-3">
+						<input type="password" id="passwordInput" class="form-control mt-3">
+					</div>	
+				
+				
+					<div class="d-flex justify-content-center mt-3">	
+						<button type="button" id="signinBtn" class="btn btn-secondary col-5">sign in</button>
+					</div>	
+				
+					<div class="d-flex justify-content-center mt-3" >
+						<a id="signup" href="#">sign up</a>
+					</div>
 			</div>
-			<div class="text-center">	
-				<button type="button" id="signinBtn" class="btn btn-secondary col-5">sign in</button>
-			</div>	
-			<div  class="text-center">
-				<a id="signup" href="#">sign up</a>
-			</div>	
 		</section>
+		
 	</div>
 </body>
 </html>
