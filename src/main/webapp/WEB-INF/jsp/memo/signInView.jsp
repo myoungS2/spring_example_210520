@@ -19,20 +19,14 @@
 			<span class="display-4"><b>메모 게시판</b></span>
 		</header>
 		
-		<section class="contents d-flex justify-content-center">
-			<div class="form-group">
-				<div class="w-100">
-						<input type="text" id="loginIdInput" class="form-control mt-3">
-						<input type="password" id="passwordInput" class="form-control mt-3">
-				</div>
+		<section class="contents d-flex justify-content-center align-items-center">
+				<div>
+						<input type="text" id="loginIdInput" class="form-control mt-3" placeholder="아이디">
+						<input type="password" id="passwordInput" class="form-control mt-3" placeholder="패스워드">
 					
-				<div class="d-flex justify-content-center mt-3">	
-						<button type="button" id="signinBtn" class="btn btn-primary col-5">로그인</button>
-				</div>	
-				<div class="d-flex justify-content-center mt-3">	
-						<button type="button" id="signupViewBtn" class="btn btn-secondary col-5">회원가입</button> <%-- view 이동버튼 --%>
-				</div>	
-			</div>
+						<button type="button" id="signinBtn" class="btn btn-primary w-100 mt-3">로그인</button>
+						<button type="button" id="signupViewBtn" class="btn btn-secondary w-100 mt-3">회원가입</button> <%-- view 이동버튼 --%>
+				</div>
 		</section>
 		
 		<footer class="text-center">
